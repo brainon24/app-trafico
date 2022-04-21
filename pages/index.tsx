@@ -1,16 +1,25 @@
 import type { NextPage } from "next";
-import { Card, CardContent, CardHeader, Grid } from "@mui/material";
+import { Card, CardContent, CardHeader, Grid, Typography } from '@mui/material';
 import { Layout } from "../components/layouts/";
 import { EntryList, NewEntry } from "../components/ui";
+import { Box } from '@mui/system';
 
 const HomePage: NextPage = () => {
+
+  let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const currentDateTime = new Date();
+
   return (
-    <Layout title='Home App'>
+    <Layout title='Traffic App'>
       <Grid container spacing={ 2 }>
 
         <Grid item xs={ 12 } sm={ 4 }>
-          <Card sx={{ height: 'calc(100vh - 100px)' }}>
-            <CardHeader title='Pendientes' />
+          <Card sx={{ height: 'calc(100vh - 100px)' /**backgroundColor: '#f0f2f5' */ }}> 
+            <Box display='flex' justifyContent='space-between'>
+              <CardHeader title='Pendientes' />
+              <Typography margin='17px 15px 0 0'>{currentDateTime.toLocaleDateString('es-ES', options)}.</Typography>
+            </Box>
+            
             <NewEntry />
             <CardContent/>
               <EntryList status='pending' />

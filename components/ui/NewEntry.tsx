@@ -52,6 +52,7 @@ export const NewEntry = () => {
                         <Button 
                             variant='text'
                             onClick={() => setIsAddingEntry(false)}
+                            color='error'
                         >
                             Cancelar
                         </Button>

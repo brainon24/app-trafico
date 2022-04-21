@@ -1,6 +1,13 @@
+/*BLACK-MODE*/
+/* .dragging{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    border: 1px dashed #fff;
+} */
 
 .dragging{
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
-    border: 1px dashed #fff;
+    border: 1px dashed #212121;
+    margin: 2px;
 }

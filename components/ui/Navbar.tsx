@@ -1,8 +1,8 @@
 import { FC, useContext } from 'react';
 import { useRouter } from 'next/router';
-import { AppBar, IconButton, Toolbar, Typography, Link } from '@mui/material';
+import { AppBar, IconButton, Toolbar, Typography, Link, Box } from '@mui/material';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
-import { UIContext } from '../../context/ui/UIContext';
+import { UIContext } from '../../context/ui/';
 import NextLink from 'next/link';
 
 
@@ -21,15 +21,18 @@ export const Navbar: FC = () => {
                 size='large'
                 edge='start'
                 onClick={ openSideMenu }
+                sx={{ color: '#fff' }}
             >
                 <MenuOutlinedIcon />
             </IconButton>
-            <NextLink href='/' passHref>
-              <Link underline='none' color='white'>
-                {<Typography variant='h6'>OpenJira - DDH</Typography>}
-              </Link>
-            </NextLink>
-            {/* {<Typography>{currentDateTime.toLocaleDateString('es-ES', options)}.</Typography>} */}
+            <Box>
+              <NextLink href='/' passHref>
+                <Link underline='none' color='white'>
+                  {<Typography variant='h6'>Traffic Task - DDH</Typography>}
+                </Link>
+              </NextLink>
+              {/* {<Typography>{currentDateTime.toLocaleDateString('es-ES', options)}.</Typography>} */}
+            </Box>
         </Toolbar>
     </AppBar>
   )
