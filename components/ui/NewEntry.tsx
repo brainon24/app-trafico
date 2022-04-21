@@ -41,7 +41,7 @@ export const NewEntry = () => {
                         //placeholder='Nueva Entrada'
                         autoFocus
                         multiline
-                        label='Nueva Entrada'
+                        label='Nueva Tarea'
                         helperText={ inputValue.length <= 1 && touched && 'Ingrese un valor' }
                         error={ inputValue.length <= 1 && touched }
                         value={ inputValue }

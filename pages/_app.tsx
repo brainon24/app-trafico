@@ -7,7 +7,6 @@ import { EntriesProvider } from '../context/entries';
 import { SnackbarProvider } from 'notistack';
 
 
-
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <SnackbarProvider maxSnack={3}>

@@ -64,7 +64,7 @@ export const EntryPage: FC<Props> = ({ entry }) => {
                 <Card>
                     <Card>
                         <CardHeader
-                        title={`Entrada:`}
+                        title={`Tarea:`}
                         subheader={`${ dateFunctions.getFortmatDistanceToNow( entry.createdAt ) }`}
                     />
                     </Card>
@@ -119,7 +119,7 @@ export const EntryPage: FC<Props> = ({ entry }) => {
             </Grid>
         </Grid>
 
-        <IconButton sx={{
+        {/* <IconButton sx={{
             position: 'fixed',
             bottom: 30,
             right: 30,
@@ -128,7 +128,7 @@ export const EntryPage: FC<Props> = ({ entry }) => {
             //onClick={onDeleted(_id, description, status)}
         >
             <DeleteOutlinedIcon />
-        </IconButton>
+        </IconButton> */}
 
     </Layout>
   )
