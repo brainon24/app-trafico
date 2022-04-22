@@ -1,4 +1,4 @@
-import { UIState } from './UIProvider';
+import { UIState } from '.';
 
 type UIActionTypes = 
 |   { type: 'Ui - Open sidebar' }

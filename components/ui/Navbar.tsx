@@ -28,7 +28,7 @@ export const Navbar: FC = () => {
             <Box>
               <NextLink href='/' passHref>
                 <Link underline='none' color='white'>
-                  {<Typography variant='h6'>Traffic Task - DDH</Typography>}
+                  {<Typography variant='h6'>brainon24 Tasks - DDH</Typography>}
                 </Link>
               </NextLink>
               {/* {<Typography>{currentDateTime.toLocaleDateString('es-ES', options)}.</Typography>} */}

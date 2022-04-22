@@ -17,7 +17,7 @@ const HomePage: NextPage = () => {
           <Card sx={{ height: 'calc(100vh - 100px)' /**backgroundColor: '#f0f2f5' */ }}> 
             <Box display='flex' justifyContent='space-between'>
               <CardHeader title='Pendientes' />
-              <Typography margin='17px 15px 0 0'>{currentDateTime.toLocaleDateString('es-ES', options)}.</Typography>
+              <Typography margin='17px 15px 0 0'>{currentDateTime.toLocaleDateString('es-ES')}.</Typography>
             </Box>
             
             <NewEntry />
