@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const entriesApi = axios.create({
-    baseURL: 'https://app-trafico.vercel.app/api',
+    baseURL: '/api',
 })
 
 export default entriesApi;
