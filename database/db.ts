@@ -13,8 +13,6 @@ const mongoConnection = {
 
 export const connect = async () => {
 
-    const connectionDB = 'mongodb+srv://brainon:brainon@cluster0.0diau.mongodb.net/trafficApp?retryWrites=true&w=majority'
-
     if ( mongoConnection.isConnected === 1 ){
         console.log('Ya estamos conectados');
         return;
@@ -31,9 +29,9 @@ export const connect = async () => {
         await mongoose.disconnect();
     }
 
-    await mongoose.connect(connectionDB || '');
+    await mongoose.connect(process.env.MONGO_URL || '');
     mongoConnection.isConnected = 1;
-    console.log('Conectado a MongoDB:', connectionDB)
+    console.log('Conectado a MongoDB:', process.env.MONGO_URL)
 }
 
 export const disconnect = async () => {

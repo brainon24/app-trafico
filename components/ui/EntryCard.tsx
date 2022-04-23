@@ -2,8 +2,9 @@ import React, { FC, DragEvent, useContext } from 'react'
 import { useRouter } from 'next/router';
 import { Card, CardActionArea, CardActions, CardContent, Typography, capitalize } from '@mui/material';
 import { Entry } from '../../interfaces/entry';
-import { UIContext } from '../../context/ui/UIContext';
+
 import { dateFunctions, dateComplet } from '../../utils/'
+import { UIContext } from '../../context/ui/UIContext';
 
 interface Props {
     entry: Entry;
@@ -42,9 +43,9 @@ export const EntryCard: FC<Props> = ({ entry }) => {
                 <Typography sx={{ whiteSpace: 'pre-line' }}>{ entry.description.length > 60 ? entry.description.substring(0, 60) + '...' : entry.description }</Typography>
             </CardContent>
 
-            <CardActions sx={{ display: 'flex', justifyContent: 'end', paddingRight: 2, marginBottom: '-10px' }}>
+            {/* <CardActions sx={{ display: 'flex', justifyContent: 'end', paddingRight: 2, marginBottom: '-10px' }}>
                 <Typography variant='body2'>{`${ dateComplet.getComplete(entry.createdAt) }`}</Typography>
-            </CardActions>
+            </CardActions> */}
             <CardActions sx={{ display: 'flex', justifyContent: 'end', paddingRight: 2 }}>
                 <Typography variant='body2'>{`${ dateFunctions.getFortmatDistanceToNow( entry.createdAt ) }`}</Typography>
             </CardActions>
