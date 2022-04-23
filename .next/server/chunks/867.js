@@ -92,8 +92,8 @@ var material_ = __webpack_require__(5692);
 // EXTERNAL MODULE: external "@mui/icons-material/MenuOutlined"
 var MenuOutlined_ = __webpack_require__(6248);
 var MenuOutlined_default = /*#__PURE__*/__webpack_require__.n(MenuOutlined_);
-// EXTERNAL MODULE: ./context/ui/index.ts + 2 modules
-var ui = __webpack_require__(9241);
+// EXTERNAL MODULE: ./context/ui/UIContext.tsx
+var UIContext = __webpack_require__(6715);
 // EXTERNAL MODULE: ./node_modules/next/link.js
 var next_link = __webpack_require__(1664);
 ;// CONCATENATED MODULE: ./components/ui/Navbar.tsx
@@ -105,7 +105,7 @@ var next_link = __webpack_require__(1664);
 
 
 const Navbar = ()=>{
-    const { openSideMenu  } = (0,external_react_.useContext)(ui/* UIContext */.QE);
+    const { openSideMenu  } = (0,external_react_.useContext)(UIContext/* default */.Z);
     const router = (0,router_.useRouter)();
     // let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     // const currentDateTime = new Date();
@@ -162,7 +162,7 @@ const menuItems = [
     'Drafts'
 ];
 const Sidebar = ()=>{
-    const { sidemenuOpen , closeSideMenu  } = (0,external_react_.useContext)(ui/* UIContext */.QE);
+    const { sidemenuOpen , closeSideMenu  } = (0,external_react_.useContext)(UIContext/* default */.Z);
     const currentYear = new Date();
     return(/*#__PURE__*/ jsx_runtime_.jsx(material_.Drawer, {
         anchor: "left",
@@ -246,8 +246,6 @@ const Sidebar = ()=>{
 
 // EXTERNAL MODULE: ./utils/index.ts + 1 modules
 var utils = __webpack_require__(6906);
-// EXTERNAL MODULE: ./context/ui/UIContext.tsx
-var UIContext = __webpack_require__(6715);
 ;// CONCATENATED MODULE: ./components/ui/EntryCard.tsx
 
 
@@ -256,7 +254,7 @@ var UIContext = __webpack_require__(6715);
 
 
 const EntryCard = ({ entry  })=>{
-    const { startDragging , endDragging  } = (0,external_react_.useContext)(UIContext/* UIContext */.Q);
+    const { startDragging , endDragging  } = (0,external_react_.useContext)(UIContext/* default */.Z);
     const router = (0,router_.useRouter)();
     const onDragStart = (event)=>{
         event.dataTransfer.setData('text', entry._id);
@@ -321,7 +319,7 @@ var EntryList_module_default = /*#__PURE__*/__webpack_require__.n(EntryList_modu
 
 const EntryList = ({ status  })=>{
     const { entries: entries1 , updateEntry  } = (0,external_react_.useContext)(entries/* EntriesContext */.te);
-    const { isDragging , endDragging  } = (0,external_react_.useContext)(ui/* UIContext */.QE);
+    const { isDragging , endDragging  } = (0,external_react_.useContext)(UIContext/* default */.Z);
     const entriesByStatus = (0,external_react_.useMemo)(()=>entries1.filter((entries)=>entries.status === status
         )
     , [
@@ -384,7 +382,7 @@ var EntriesContext = __webpack_require__(2719);
 
 const NewEntry = ()=>{
     const { addNewEntry  } = (0,external_react_.useContext)(EntriesContext/* EntriesContext */.t);
-    const { isAddingEntry , setIsAddingEntry  } = (0,external_react_.useContext)(ui/* UIContext */.QE);
+    const { isAddingEntry , setIsAddingEntry  } = (0,external_react_.useContext)(UIContext/* default */.Z);
     const { 0: inputValue , 1: setInputValue  } = (0,external_react_.useState)('');
     const { 0: touched , 1: setTouched  } = (0,external_react_.useState)(false);
     const onTextFieldChanged = (event)=>{

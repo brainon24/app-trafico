@@ -2,7 +2,7 @@ import { FC, useContext } from 'react';
 import { useRouter } from 'next/router';
 import { AppBar, IconButton, Toolbar, Typography, Link, Box } from '@mui/material';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
-import { UIContext } from '../../context/ui/';
+import UIContext from '../../context/ui/UIContext';
 import NextLink from 'next/link';
 
 

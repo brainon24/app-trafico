@@ -4,7 +4,7 @@ import { EntryCard } from './EntryCard'
 import { EntryStatus } from '../../interfaces/entry';
 import { useContext } from 'react';
 import { EntriesContext } from '../../context/entries';
-import { UIContext } from '../../context/ui/';
+import UIContext from '../../context/ui/UIContext';
 import styles from './EntryList.module.css'
 
 interface Props {

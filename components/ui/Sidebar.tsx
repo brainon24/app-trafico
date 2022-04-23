@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Avatar, Box, Divider, Drawer, List, ListItem, ListItemIcon, ListItemText, Typography, } from "@mui/material"
 import InboxOutlinedIcon from '@mui/icons-material/InboxOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import { UIContext } from '../../context/ui';
+import UIContext from '../../context/ui/UIContext';
 import CardMedia from '@mui/material/CardMedia';
 import logoIMG from './../../public/cropped-trans.png';
 

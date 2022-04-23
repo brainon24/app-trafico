@@ -1,5 +1,6 @@
 import { FC, useReducer } from 'react';
-import { UIContext, uiReducer } from '.';
+import { uiReducer } from '.';
+import UIContext from '../../context/ui/UIContext';
 
 export interface UIState{
     sidemenuOpen: boolean;

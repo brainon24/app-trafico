@@ -5,7 +5,7 @@ exports.id = 888;
 exports.ids = [888];
 exports.modules = {
 
-/***/ 7259:
+/***/ 9217:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -80,8 +80,100 @@ const lightTheme = (0,material_.createTheme)({
 
 
 
-// EXTERNAL MODULE: ./context/ui/index.ts + 2 modules
-var ui = __webpack_require__(9241);
+// EXTERNAL MODULE: ./context/ui/UIContext.tsx
+var UIContext = __webpack_require__(6715);
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(6689);
+;// CONCATENATED MODULE: ./context/ui/UIProvider.tsx
+
+
+
+
+const UI_INITIAL_STATE = {
+    sidemenuOpen: false,
+    isAddingEntry: false,
+    isDragging: false
+};
+const UIProvider = ({ children  })=>{
+    const { 0: state , 1: dispatch  } = (0,external_react_.useReducer)(uiReducer, UI_INITIAL_STATE);
+    const openSideMenu = ()=>{
+        dispatch({
+            type: 'Ui - Open sidebar'
+        });
+    };
+    const closeSideMenu = ()=>{
+        dispatch({
+            type: 'Ui - Close sidebar'
+        });
+    };
+    const setIsAddingEntry = (isAdding)=>{
+        dispatch({
+            type: 'Ui - Set isAddingEntry',
+            payload: isAdding
+        });
+    };
+    const startDragging = ()=>{
+        dispatch({
+            type: 'Ui - Sart Dragging'
+        });
+    };
+    const endDragging = ()=>{
+        dispatch({
+            type: 'Ui - End Dragging'
+        });
+    };
+    return(/*#__PURE__*/ jsx_runtime_.jsx(UIContext/* default.Provider */.Z.Provider, {
+        value: {
+            ...state,
+            //Methods
+            openSideMenu,
+            closeSideMenu,
+            setIsAddingEntry,
+            startDragging,
+            endDragging
+        },
+        children: children
+    }));
+};
+
+;// CONCATENATED MODULE: ./context/ui/uiReducer.ts
+const uiReducer = (state, action)=>{
+    switch(action.type){
+        case 'Ui - Open sidebar':
+            return {
+                ...state,
+                sidemenuOpen: true
+            };
+        case 'Ui - Close sidebar':
+            return {
+                ...state,
+                sidemenuOpen: false
+            };
+        case 'Ui - Set isAddingEntry':
+            return {
+                ...state,
+                isAddingEntry: action.payload
+            };
+        case 'Ui - Sart Dragging':
+            return {
+                ...state,
+                isDragging: true
+            };
+        case 'Ui - End Dragging':
+            return {
+                ...state,
+                isDragging: false
+            };
+        default:
+            return state;
+    }
+};
+
+;// CONCATENATED MODULE: ./context/ui/index.ts
+
+
+
+
 // EXTERNAL MODULE: ./context/entries/index.ts + 4 modules
 var entries = __webpack_require__(7759);
 // EXTERNAL MODULE: external "notistack"
@@ -98,7 +190,7 @@ function MyApp({ Component , pageProps  }) {
     return(/*#__PURE__*/ jsx_runtime_.jsx(external_notistack_.SnackbarProvider, {
         maxSnack: 3,
         children: /*#__PURE__*/ jsx_runtime_.jsx(entries/* EntriesProvider */.qj, {
-            children: /*#__PURE__*/ jsx_runtime_.jsx(ui/* UIProvider */.JP, {
+            children: /*#__PURE__*/ jsx_runtime_.jsx(UIProvider, {
                 children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)(material_.ThemeProvider, {
                     theme: lightTheme,
                     children: [
@@ -159,7 +251,7 @@ module.exports = require("react/jsx-runtime");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [642], () => (__webpack_exec__(7259)));
+var __webpack_exports__ = __webpack_require__.X(0, [558], () => (__webpack_exec__(9217)));
 module.exports = __webpack_exports__;
 
 })();

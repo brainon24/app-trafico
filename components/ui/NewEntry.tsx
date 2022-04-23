@@ -4,7 +4,7 @@ import SaveOutlinedIcon from '@mui/icons-material/SaveOutlined';
 import AddIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import { Box } from '@mui/system';
 import { EntriesContext } from '../../context/entries/EntriesContext';
-import { UIContext } from '../../context/ui';
+import UIContext from '../../context/ui/UIContext';
 
 export const NewEntry = () => {
 

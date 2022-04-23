@@ -4,7 +4,7 @@ import { Card, CardActionArea, CardActions, CardContent, Typography, capitalize 
 import { Entry } from '../../interfaces/entry';
 
 import { dateFunctions, dateComplet } from '../../utils/'
-import { UIContext } from '../../context/ui/UIContext';
+import UIContext from '../../context/ui/UIContext';
 
 interface Props {
     entry: Entry;
